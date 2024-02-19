@@ -1,0 +1,135 @@
+---
+layout: subfolder
+---
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#footer" class="icon fa-info-circle">Rólam</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        folder = window.location.pathname.split('.')[0].split('/')[2]
+        document.write('<h1 style="width: 100%; padding: 5px; text-align:center">'+folder+'</h1>')
+    </script>
+
+    <a href="../index.html" style="position: absolute; top: 10px; left: 10px;">Kezdőlap</a>
+
+    <div id="main" data-exif='{{ site.exif }}'>
+        {% for image in site.static_files %}
+        {% if image.path contains 'Kaposmero-City' %}
+        <article class="thumb">
+            <script>
+                folder = window.location.pathname.split('.')[0].split('/')[2]
+                path = `{{ site.baseurl }}/images/fulls/`+folder+`/{{ image.name }}`
+
+                document.write(`
+                    <a href='${path}' class="image">
+                        <img src='${path}' alt="" data-name="{{ image.name }}"/>
+                    </a>
+                    <h2></h2>
+                    <p></p>
+                `)
+            </script>
+        </article>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <footer id="footer" class="panel">
+        <div class="inner split">
+            <div>
+                <section>
+                    <h2>{{ site.footer.name }}</h2>
+                    <p>{{ site.footer.bio }}</p>
+                    <p>{{ site.footer.github }}</p>
+                </section>
+                <section>
+                    <h2>Megtetszett a weboldal?</h2>
+                    <div class="presentify">
+                        <div class="presentify-text">
+                            Weboldalfejlesztéssel is foglalkozok és ha szükséged lenne egyre lépj kapcsolatba velem!
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Kövess</h2>
+                    <ul class="icons">
+                        {% if site.social_urls.facebook %}
+                            <li>
+                                <a href="{{ site.social_urls.facebook }}" class="icon fa-facebook">
+                                    <span class="label">Facebook</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.twitter %}
+                            <li>
+                                <a href="{{ site.social_urls.twitter }}" class="icon fa-twitter">
+                                    <span class="label">Twitter</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.instagram %}
+                            <li>
+                                <a href="{{ site.social_urls.instagram }}" class="icon fa-instagram">
+                                    <span class="label">Instagram</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.dribbble %}
+                            <li>
+                                <a href="{{ site.social_urls.dribbble }}" class="icon fa-dribbble">
+                                    <span class="label">Dribbble</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.github %}
+                            <li>
+                                <a href="{{ site.social_urls.github }}" class="icon fa-github">
+                                    <span class="label">GitHub</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.linkedin %}
+                            <li>
+                                <a href="{{ site.social_urls.linkedin }}" class="icon fa-linkedin">
+                                    <span class="label">LinkedIn</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </section>
+                <p class="copyright">
+                    &copy; {{ site.author }}. Design: {{ site.web_design }}
+                </p>
+            </div>
+            <div>
+                <section>
+                    <h2>Kapcsolat</h2>
+                    <form method="post" action="#">
+                        <div class="field half first">
+                            <input type="text" name="name" id="name" placeholder="Név"/>
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="email" id="email" placeholder="Email"/>
+                        </div>
+                        <div class="field">
+                            <textarea name="message" id="message" rows="4" placeholder="Üzenet"></textarea>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Küldés" class="special"/></li>
+                            <li><input type="reset" value="Mégse"/></li>
+                        </ul>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </footer>
+</div>

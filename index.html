@@ -10,27 +10,31 @@ layout: default
         <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
         <nav>
             <ul>
-                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
+                <li><a href="#footer" class="icon fa-info-circle">Rólam</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main -->
+    <h1 style="text-align: center; padding: 2px;">Galéria</h1>
+ 
     <div id="main" data-exif='{{ site.exif }}'>
-        {% for image in site.static_files %}
-        {% if image.path contains 'fulls' %}
-        <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
+        <article class="thumb" onclick="window.location.pathname ='/Kepek/Bene-Szentlorinc-edzomeccs.html'">
+                <img src="/images/fulls/Bene-Szentlorinc-edzomeccs/DSC_1254.jpg" alt="" style="cursor: pointer ;width: 100%; height: 100%; object-fit: cover;" data-name="{{ image.name }}"/>
+                <h2>Bene Szentlőrinc edzőmeccs</h2>
+                <h2 style="bottom: 5px;">2024. 02. 04.</h2>
         </article>
-        {% endif %}
-        {% endfor %}
+        <article class="thumb" onclick="window.location.pathname ='/Kepek/MCAR-Kupa.html'">
+            <img src="/images/fulls/MCAR-Kupa/3.jpg" alt="" style="cursor: pointer ;width: 100%; height: 100%; object-fit: cover;" data-name="{{ image.name }}"/>
+            <h2>MCAR Kupa</h2>
+            <h2 style="bottom: 5px;">2023. 11. 22.</h2>
+        </article>
+        <article class="thumb" onclick="window.location.pathname ='/Kepek/Kaposmero-City.html'">
+            <img src="/images/fulls/Kaposmero-City/DSC9404.jpg" alt="" style="cursor: pointer ;width: 100%; height: 100%; object-fit: cover;" data-name="{{ image.name }}"/>
+            <h2>Kaposmérő City</h2>
+            <h2 style="bottom: 5px;">2024. 02. 04.</h2>
+        </article>
     </div>
 
-    <!-- Footer -->
     <footer id="footer" class="panel">
         <div class="inner split">
             <div>
@@ -40,22 +44,15 @@ layout: default
                     <p>{{ site.footer.github }}</p>
                 </section>
                 <section>
-                    <h2>Sponsor</h2>
+                    <h2>Megtetszett a weboldal?</h2>
                     <div class="presentify">
-                        <div class="presentify-logo">
-                            <a href="https://presentify.compzets.com">
-                                <img src="https://camo.githubusercontent.com/7238b763f1ed0a7413105d5eb44368c1fc2b339e373c8927e3f02391667d55f2/68747470733a2f2f70726573656e746966792e636f6d707a6574732e636f6d2f6173736574732f696d672f70726573656e746966792f6170702d69636f6e2d3531322e706e67"
-                                 alt="presentify-logo" />
-                            </a>
-                        </div>
                         <div class="presentify-text">
-                            Turn your screen into a canvas when on video calls and articulate your thoughts better than
-                            ever with the <a href="https://presentify.compzets.com">Presentify</a> app.
+                            Weboldalfejlesztéssel is foglalkozok és ha szükséged lenne egyre lépj kapcsolatba velem!
                         </div>
                     </div>
                 </section>
                 <section>
-                    <h2>Follow me on ...</h2>
+                    <h2>Kövess</h2>
                     <ul class="icons">
                         {% if site.social_urls.facebook %}
                             <li>
@@ -107,20 +104,20 @@ layout: default
             </div>
             <div>
                 <section>
-                    <h2>Get in touch</h2>
+                    <h2>Kapcsolat</h2>
                     <form method="post" action="#">
                         <div class="field half first">
-                            <input type="text" name="name" id="name" placeholder="Name"/>
+                            <input type="text" name="name" id="name" placeholder="Név"/>
                         </div>
                         <div class="field half">
                             <input type="text" name="email" id="email" placeholder="Email"/>
                         </div>
                         <div class="field">
-                            <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                            <textarea name="message" id="message" rows="4" placeholder="Üzenet"></textarea>
                         </div>
                         <ul class="actions">
-                            <li><input type="submit" value="Send" class="special"/></li>
-                            <li><input type="reset" value="Reset"/></li>
+                            <li><input type="submit" value="Küldés" class="special"/></li>
+                            <li><input type="reset" value="Mégse"/></li>
                         </ul>
                     </form>
                 </section>
